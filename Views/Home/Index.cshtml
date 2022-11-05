@@ -12,7 +12,7 @@
 
 @if (Model.LaCadeteria.Cadetes.Count() < 10)
 {
-    @Html.ActionLink("Alta Cadete", "altaCadete")
+    @Html.ActionLink("| Alta Cadete |", "altaCadete")
 
 }
 else
@@ -42,8 +42,8 @@ else
                     <td>@item.Telefono</td>
                     <td>@item.Direccion</td>
                     <td>@item.Pedidos.Count()</td>
-                    <td>@Html.ActionLink("Edit", "editCadete", new { id = item.Id_persona })</td>
-                    <td>@Html.ActionLink("Baja", "bajaCadete", new { id = item.Id_persona }, new { onclick = $"return confirm('Esta seguro?');" })</td>
+                    <td>@Html.ActionLink("| Edit |", "editCadete", new { dataId = item.Id_persona })</td>
+                    <td>@Html.ActionLink("| Baja |", "bajaCadete", new { dataId = item.Id_persona }, new { onclick = $"return confirm('Esta seguro?');" })</td>
                 </tr>
 
             }
@@ -66,7 +66,7 @@ else
 
 @if (Model.PedidosSinAsignar.Count() < 10) 
 {
-    @Html.ActionLink("Alta Pedido", "altaPedido");
+    @Html.ActionLink("| Alta Pedido |", "altaPedido");
 
 }
 else
@@ -98,10 +98,10 @@ else
                     <td>@item.ElCliente.Nombre</td>
                     <td>@item.ElCliente.Telefono</td>
                     <td>@item.ElCliente.Direccion</td>
-                    <td>@item.ElCliente.ReferenciaDireccion</td>
+                    <td>@item.ElCliente.Referencia</td>
                     <td>@item.Observaciones</td>
-                    <td>@Html.ActionLink("Edit", "editPedido", new { id = item.Id_pedido })</td>
-                    <td>@Html.ActionLink("Baja", "bajaPedido", new { id = item.Id_pedido }, new { onclick = $"return confirm('Esta seguro?');" })</td>
+                    <td>@Html.ActionLink("| Edit |", "editPedido", new { dataId = item.Id_pedido })</td>
+                    <td>@Html.ActionLink("| Baja |", "bajaPedido", new { dataId = item.Id_pedido }, new { onclick = $"return confirm('Esta seguro?');" })</td>
 
                 </tr>
 

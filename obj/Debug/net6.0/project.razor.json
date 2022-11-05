@@ -16303,8 +16303,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/trix/Library/Mobile Documents/com~apple~CloudDocs/facet/taller 2/tl2-tp4-2022-TRIXServer/Views/Home/altaPedido.cshtml",
+      "TargetPath": "Views\\Home\\altaPedido.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/trix/Library/Mobile Documents/com~apple~CloudDocs/facet/taller 2/tl2-tp4-2022-TRIXServer/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/trix/Library/Mobile Documents/com~apple~CloudDocs/facet/taller 2/tl2-tp4-2022-TRIXServer/Views/Home/editCadete.cshtml",
+      "TargetPath": "Views\\Home\\editCadete.cshtml",
       "FileKind": "mvc"
     },
     {

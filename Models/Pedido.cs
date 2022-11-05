@@ -39,9 +39,9 @@ namespace tl2_tp4_2022_TRIXServer.Models
 
     enum status
     {
-        enPreparacion = 1,
-        enCamino = 2,
-        entregado = 3,
+        Preparacion = 1,
+        Traslado = 2,
+        Entregado = 3,
 
     }
     

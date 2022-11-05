@@ -7,18 +7,18 @@ namespace tl2_tp4_2022_TRIXServer.Models
 {
     public class Cliente : Persona
     {
-        private string referenciaDireccion;
+        private string referencia;
 
-        public string ReferenciaDireccion { get => referenciaDireccion; set => referenciaDireccion = value; }
+        public string Referencia { get => referencia; set => referencia = value; }
 
         public Cliente() : base()
         {
 
         }
 
-        public Cliente(int dataId, string dataNombre, string dataTelefono, string dataDireccion) : base(dataId, dataNombre, dataTelefono, dataDireccion)
+        public Cliente(int dataId, string dataNombre, string dataTelefono, string dataDireccion, string dataReferencia) : base(dataId, dataNombre, dataTelefono, dataDireccion)
         {
-            this.referenciaDireccion = dataDireccion;
+            this.referencia = dataReferencia;
 
         }
 

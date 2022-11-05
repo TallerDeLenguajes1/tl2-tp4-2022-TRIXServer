@@ -1,10 +1,12 @@
+@model tl2_tp4_2022_TRIXServer.Models.Cadete
+
 @{
-    ViewData["Title"] = "Alta Cadete";
+    ViewData["Title"] = "Edit Cadete";
 }
 
 <hr />
 
-@using (Html.BeginForm("altaCadete", "Home"))
+@using (Html.BeginForm("editCadete", "Home"))
 {
     <table>
         <tr>
@@ -13,7 +15,7 @@
             </td>
             <td>
                 <label for="nombre">
-                    <input type="text" name="dataNombre" id="dataNombre">
+                    <input type="text" name="dataNombre" id="dataNombre" value="@Model.Nombre">
                 </label>
             </td>
         </tr>
@@ -23,7 +25,7 @@
             </td>
             <td>
                 <label for="telefono">
-                    <input type="text" name="dataTelefono" id="dataTelefono">
+                    <input type="text" name="dataTelefono" id="dataTelefono" value="@Model.Telefono">
                 </label>
             </td>
         </tr>
@@ -33,13 +35,14 @@
             </td>
             <td>
                 <label for="direccion">
-                    <input type="text" name="dataDireccion" id="dataDireccion">
+                    <input type="text" name="dataDireccion" id="dataDireccion" value="@Model.Direccion">
                 </label>
             </td>
         </tr>
         <tr>
             <td colspan = 2>
-               <input type="submit", value="Alta">
+               <input type="hidden" name="dataId" value="@Model.Id_persona">
+               <input type="submit", value="Edit">
             </td>
         </tr>
     </table>
