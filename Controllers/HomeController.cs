@@ -59,6 +59,14 @@ public class HomeController : Controller
         return RedirectToAction("Index");
     }
 
+    public IActionResult bajaCadete(int dataId)
+    {
+        Cadete selectCadete = laDBCadeteria.LaCadeteria.Cadetes.Find(x => x.Id_persona == dataId);
+        laDBCadeteria.LaCadeteria.Cadetes.Remove(selectCadete);
+
+        return RedirectToAction("Index");
+    }
+
     //////////
 
     public IActionResult altaPedido()
@@ -72,6 +80,34 @@ public class HomeController : Controller
     {
         laDBCadeteria.PedidosSinAsignar.Add(new Pedido(id_pedido, dataObservaciones, 1, new Cliente(id_pedido, dataNombre, dataTelefono, dataDireccion, dataReferencia)));
         id_pedido++;
+
+        return RedirectToAction("Index");
+    }
+
+    public IActionResult editPedido(int dataId)
+    {
+        return View(laDBCadeteria.PedidosSinAsignar.Find(x => x.Id_pedido == dataId));
+
+    }
+
+    [HttpPost]
+    public IActionResult editPedido(int dataId, string dataNombre, string dataTelefono, string dataDireccion, string dataReferencia, string dataObservaciones)
+    {
+        Pedido selectPedido = laDBCadeteria.PedidosSinAsignar.Find(x => x.Id_pedido == dataId);
+        selectPedido.ElCliente.Nombre = dataNombre;
+        selectPedido.ElCliente.Telefono = dataTelefono;
+        selectPedido.ElCliente.Direccion = dataDireccion;
+        selectPedido.ElCliente.Referencia = dataReferencia;
+        selectPedido.Observaciones = dataObservaciones;
+
+        return RedirectToAction("Index");
+
+    }
+
+    public IActionResult bajaPedido(int dataId)
+    {
+        Pedido selectPedido = laDBCadeteria.PedidosSinAsignar.Find(x => x.Id_pedido == dataId);
+        laDBCadeteria.PedidosSinAsignar.Remove(selectPedido);
 
         return RedirectToAction("Index");
     }
