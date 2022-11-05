@@ -13,14 +13,28 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    DBCadeteria laDBCadeteria = CadeteriaUniversal.instancia;
+
+    static int id_cadete = 1;
+    static int id_pedido = 1;
+
     public IActionResult Index()
     {
-        return View();
+        return View(laDBCadeteria);
     }
 
-    public IActionResult Privacy()
+    public IActionResult altaCadete()
     {
-        return View();
+        return View(laDBCadeteria);
+    }
+
+    [HttpPost]
+    public IActionResult altaCadete(string dataNombre, string dataTelefono, string dataDireccion)
+    {
+        laDBCadeteria.LaCadeteria.Cadetes.Add(new Cadete(id_cadete, dataNombre, dataTelefono, dataDireccion));
+        id_cadete++;
+
+        return RedirectToAction("Index");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

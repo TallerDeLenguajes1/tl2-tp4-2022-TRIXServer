@@ -16328,6 +16328,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/trix/Library/Mobile Documents/com~apple~CloudDocs/facet/taller 2/tl2-tp4-2022-TRIXServer/Views/Home/altaCadete.cshtml",
+      "TargetPath": "Views\\Home\\altaCadete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/trix/Library/Mobile Documents/com~apple~CloudDocs/facet/taller 2/tl2-tp4-2022-TRIXServer/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"

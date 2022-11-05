@@ -41,7 +41,34 @@ namespace tl2_tp4_2022_TRIXServer.Models
 
     public class DBCadeteria
     {
-        
+        private Cadeteria laCadeteria;
+        private List<Pedido> pedidosSinAsignar;
+
+        public DBCadeteria()
+        {
+            this.laCadeteria = new Cadeteria();
+            this.pedidosSinAsignar = new List<Pedido>();
+
+        }
+
+        public Cadeteria LaCadeteria { get => laCadeteria; set => laCadeteria = value; }
+        public List<Pedido> PedidosSinAsignar { get => pedidosSinAsignar; set => pedidosSinAsignar = value; }
+
+    }
+
+    public class CadeteriaUniversal
+    {
+        private static DBCadeteria dataBase = new DBCadeteria();
+
+        private CadeteriaUniversal()
+        {
+
+        }
+
+        public static DBCadeteria instancia
+        {
+            get { return dataBase; }
+        }
     }
 
 }
